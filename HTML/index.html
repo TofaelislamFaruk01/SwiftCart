@@ -1,0 +1,551 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- Title and logo for the website -->
+    <title>SwiftCart - Your Shopping Companion</title>
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+    <!-- Font awesome for icons -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+      integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <!-- Font Integration for a modern and clean look  -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+      rel="stylesheet"
+    />
+    <!-- Tailwind CSS for styling and DaisyUI for UI components -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/daisyui@5"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+  </head>
+  <body class="max-w-[1800px] mx-auto">
+    <!-- Navbar Section -->
+    <navbar>
+      <div class="navbar bg-base-100 shadow-sm">
+        <!-- Left: Logo -->
+        <div class="navbar-start">
+          <!-- Mobile Menu -->
+          <div class="dropdown">
+            <div tabindex="0" role="button" class="btn btn-ghost lg:hidden">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                class="h-5 w-5"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M4 6h16M4 12h8m-8 6h16"
+                />
+              </svg>
+            </div>
+            <ul
+              tabindex="0"
+              class="menu menu-sm dropdown-content bg-base-100 rounded-box z-[1] mt-3 w-52 p-2 shadow"
+            >
+              <li><a href="index.html">Home</a></li>
+              <li><a href="products.html">Products</a></li>
+              <li><a href="about.html">About</a></li>
+              <li><a href="contact.html">Contact</a></li>
+            </ul>
+          </div>
+
+          <!-- Logo -->
+          <a class="btn btn-ghost text-xl font-bold">SwiftCart</a>
+        </div>
+
+        <!-- Center: Menu -->
+        <div class="navbar-center hidden lg:flex">
+          <ul class="menu menu-horizontal px-1 font-medium">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="products.html">Products</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </div>
+
+        <!-- Right: Cart Button -->
+        <div class="navbar-end">
+          <button class="btn btn-ghost btn-circle">
+            <div class="indicator">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                class="h-6 w-6"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M3 3h2l.4 2M7 13h10l4-8H5.4m1.6 8L5.4 5M7 13l-1.5 7h11L17 13M9 21h6"
+                />
+              </svg>
+              <span class="badge badge-sm indicator-item">0</span>
+            </div>
+          </button>
+        </div>
+      </div>
+    </navbar>
+    <main>
+      <!-- Hero Section -->
+      <div
+        class="hero min-h-[500px] bg-cover bg-center relative"
+        style="background-image: url(&quot;../Assets/banner-image.png&quot;)"
+      >
+        <div class="hero-overlay bg-black/70"></div>
+
+        <div class="hero-content text-left text-white">
+          <div class="max-w-6xl">
+            <h1 class="mb-5 text-5xl font-bold">Best Collection For You</h1>
+            <p class="mb-6 text-lg">
+              Discover the latest fashion, electronics, and lifestyle products
+              at unbeatable prices. Upgrade your style today with SwiftCart.
+            </p>
+            <button class="btn btn-primary btn-wide text-lg">Shop Now</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Why Choose Us Section -->
+      <section class="bg-[#f9f9f9] py-20">
+        <div class="max-w-6xl mx-auto px-4 text-left">
+          <h2 class="text-5xl font-bold mb-5 text-center">Why Choose Us</h2>
+          <p class="text-gray-500 mb-18 text-center">
+            We provide the best shopping experience with top-notch services.
+          </p>
+
+          <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+            <!-- Card 1 -->
+            <div class="bg-white rounded-lg shadow-lg p-6 relative">
+              <div class="bg-white shadow-lg p-1 absolute -top-5 left-5">
+                <div
+                  class="w-10 h-10 flex items-center justify-center bg-indigo-100 shadow-sm"
+                >
+                  <i class="fas fa-truck-fast text-lg text-indigo-600"></i>
+                </div>
+              </div>
+              <h3 class="font-semibold text-lg mb-3 mt-6">Fast Delivery</h3>
+              <p class="text-gray-500 text-sm">
+                Get your orders delivered to your doorstep quickly and
+                efficiently.
+              </p>
+            </div>
+
+            <!-- Card 2 -->
+            <div class="bg-white rounded-lg shadow-lg p-6 relative">
+              <div class="bg-white shadow-lg p-1 absolute -top-5 left-5">
+                <div
+                  class="w-10 h-10 flex items-center justify-center bg-indigo-100 shadow-sm"
+                >
+                  <i class="fas fa-headset text-lg text-indigo-600"></i>
+                </div>
+              </div>
+              <h3 class="font-semibold text-lg mb-3 mt-6">24/7 Support</h3>
+              <p class="text-gray-500 text-sm">
+                Our support team is available around the clock to assist you.
+              </p>
+            </div>
+
+            <!-- Card 3 -->
+            <div class="bg-white rounded-lg shadow-lg p-6 relative">
+              <div class="bg-white shadow-lg p-1 absolute -top-5 left-5">
+                <div
+                  class="w-10 h-10 flex items-center justify-center bg-indigo-100 shadow-sm"
+                >
+                  <i class="fas fa-shield-alt text-lg text-indigo-600"></i>
+                </div>
+              </div>
+              <h3 class="font-semibold text-lg mb-3 mt-6">Secure Payment</h3>
+              <p class="text-gray-500 text-sm">
+                Experience safe and secure transactions with our encrypted
+                payment systems.
+              </p>
+            </div>
+
+            <!-- Card 4 -->
+            <div class="bg-white rounded-lg shadow-lg p-6 relative">
+              <div class="bg-white shadow-lg p-1 absolute -top-5 left-5">
+                <div
+                  class="w-10 h-10 flex items-center justify-center bg-indigo-100 shadow-sm"
+                >
+                  <i class="fas fa-arrows-rotate text-lg text-indigo-600"></i>
+                </div>
+              </div>
+              <h3 class="font-semibold text-lg mb-3 mt-6">Easy Returns</h3>
+              <p class="text-gray-500 text-sm">
+                Not satisfied? Return your products easily within 30 days.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Trending Products Section -->
+      <section>
+        <!-- Tailwind + DaisyUI CSS needed in your project -->
+
+        <div class="max-w-6xl mx-auto px-4 py-16 bg-white">
+          <h2 class="text-4xl font-bold mb-8">Trending Now</h2>
+
+          <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <!-- Card 1 -->
+            <div
+              class="card bg-white w-full shadow-sm rounded-lg overflow-hidden"
+            >
+              <figure class="bg-gray-100 p-8 flex justify-center items-center">
+                <img
+                  src="../Assets/product1.png"
+                  alt="Backpack"
+                  class="max-h-60 object-contain"
+                />
+              </figure>
+              <div class="card-body p-4">
+                <div class="flex justify-between items-center mb-2">
+                  <div
+                    class="text-xs bg-indigo-100 text-indigo-600 rounded px-2 py-0.5 font-semibold"
+                  >
+                    Men's Clothing
+                  </div>
+                  <div
+                    class="flex items-center text-yellow-500 text-sm font-semibold space-x-1"
+                  >
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      class="h-4 w-4 fill-current"
+                      viewBox="0 0 20 20"
+                    >
+                      <path
+                        d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.286 3.97a1 1 0 00.95.69h4.184c.969 0 1.371 1.24.588 1.81l-3.39 2.462a1 1 0 00-.364 1.118l1.287 3.97c.3.921-.755 1.688-1.54 1.118l-3.39-2.462a1 1 0 00-1.176 0l-3.39 2.462c-.784.57-1.838-.197-1.539-1.118l1.286-3.97a1 1 0 00-.364-1.118L2.04 9.397c-.783-.57-.38-1.81.588-1.81h4.184a1 1 0 00.951-.69l1.286-3.97z"
+                      />
+                    </svg>
+                    <span class="text-gray-700">3.9</span>
+                    <span class="text-gray-400">(120)</span>
+                  </div>
+                </div>
+
+                <h2 class="font-semibold text-sm line-clamp-1 mb-1">
+                  Fjallraven - Foldsack No. 1 Backpack, Fits 15 Laptops
+                </h2>
+
+                <p class="font-bold text-lg mb-4">$109.95</p>
+
+                <div class="flex space-x-3">
+                  <button
+                    class="btn btn-outline btn-sm flex-1 gap-2 justify-center border-gray-300"
+                    type="button"
+                  >
+                    <i class="fas fa-eye text-sm"></i>
+                    Details
+                  </button>
+                  <button
+                    class="btn btn-primary btn-sm flex-1 gap-2 justify-center"
+                    type="button"
+                  >
+                    <i class="fas fa-shopping-cart text-sm"></i>
+                    Add
+                  </button>
+                </div>
+              </div>
+            </div>
+
+            <!-- Card 2 -->
+            <div
+              class="card bg-white w-full shadow-sm rounded-lg overflow-hidden"
+            >
+              <figure class="bg-gray-100 p-8 flex justify-center items-center">
+                <img
+                  src="../Assets/product2.png"
+                  alt="Mens Casual Shirt"
+                  class="max-h-60 object-contain"
+                />
+              </figure>
+              <div class="card-body p-4">
+                <div class="flex justify-between items-center mb-2">
+                  <div
+                    class="text-xs bg-indigo-100 text-indigo-600 rounded px-2 py-0.5 font-semibold"
+                  >
+                    Men's Clothing
+                  </div>
+                  <div
+                    class="flex items-center text-yellow-500 text-sm font-semibold space-x-1"
+                  >
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      class="h-4 w-4 fill-current"
+                      viewBox="0 0 20 20"
+                    >
+                      <path
+                        d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.286 3.97a1 1 0 00.95.69h4.184c.969 0 1.371 1.24.588 1.81l-3.39 2.462a1 1 0 00-.364 1.118l1.287 3.97c.3.921-.755 1.688-1.54 1.118l-3.39-2.462a1 1 0 00-1.176 0l-3.39 2.462c-.784.57-1.838-.197-1.539-1.118l1.286-3.97a1 1 0 00-.364-1.118L2.04 9.397c-.783-.57-.38-1.81.588-1.81h4.184a1 1 0 00.951-.69l1.286-3.97z"
+                      />
+                    </svg>
+                    <span class="text-gray-700">4.1</span>
+                    <span class="text-gray-400">(259)</span>
+                  </div>
+                </div>
+
+                <h2 class="font-semibold text-sm line-clamp-1 mb-1">
+                  Mens Casual Premium Slim Fit T-Shirts
+                </h2>
+
+                <p class="font-bold text-lg mb-4">$22.30</p>
+
+                <div class="flex space-x-3">
+                  <button
+                    class="btn btn-outline btn-sm flex-1 gap-2 justify-center border-gray-300"
+                    type="button"
+                  >
+                    <i class="fas fa-eye text-sm"></i>
+                    Details
+                  </button>
+                  <button
+                    class="btn btn-primary btn-sm flex-1 gap-2 justify-center"
+                    type="button"
+                  >
+                    <i class="fas fa-shopping-cart text-sm"></i>
+                    Add
+                  </button>
+                </div>
+              </div>
+            </div>
+
+            <!-- Card 3 -->
+            <div
+              class="card bg-white w-full shadow-sm rounded-lg overflow-hidden"
+            >
+              <figure class="bg-gray-100 p-8 flex justify-center items-center">
+                <img
+                  src="../Assets/product3.png"
+                  alt="Mens Cotton Jacket"
+                  class="max-h-60 object-contain"
+                />
+              </figure>
+              <div class="card-body p-4">
+                <div class="flex justify-between items-center mb-2">
+                  <div
+                    class="text-xs bg-indigo-100 text-indigo-600 rounded px-2 py-0.5 font-semibold"
+                  >
+                    Men's Clothing
+                  </div>
+                  <div
+                    class="flex items-center text-yellow-500 text-sm font-semibold space-x-1"
+                  >
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      class="h-4 w-4 fill-current"
+                      viewBox="0 0 20 20"
+                    >
+                      <path
+                        d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.286 3.97a1 1 0 00.95.69h4.184c.969 0 1.371 1.24.588 1.81l-3.39 2.462a1 1 0 00-.364 1.118l1.287 3.97c.3.921-.755 1.688-1.54 1.118l-3.39-2.462a1 1 0 00-1.176 0l-3.39 2.462c-.784.57-1.838-.197-1.539-1.118l1.286-3.97a1 1 0 00-.364-1.118L2.04 9.397c-.783-.57-.38-1.81.588-1.81h4.184a1 1 0 00.951-.69l1.286-3.97z"
+                      />
+                    </svg>
+                    <span class="text-gray-700">4.7</span>
+                    <span class="text-gray-400">(500)</span>
+                  </div>
+                </div>
+
+                <h2 class="font-semibold text-sm line-clamp-1 mb-1">
+                  Mens Cotton Jacket
+                </h2>
+
+                <p class="font-bold text-lg mb-4">$55.99</p>
+
+                <div class="flex space-x-3">
+                  <button
+                    class="btn btn-outline btn-sm flex-1 gap-2 justify-center border-gray-300"
+                    type="button"
+                  >
+                    <i class="fas fa-eye text-sm"></i>
+                    Details
+                  </button>
+                  <button
+                    class="btn btn-primary btn-sm flex-1 gap-2 justify-center"
+                    type="button"
+                  >
+                    <i class="fas fa-shopping-cart text-sm"></i>
+                    Add
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+    <!-- Footer Section -->
+    <footer class="p-10 text-gray-300" style="background-color: #1f2430">
+      <div
+        class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-4 gap-8 text-sm"
+      >
+        <!-- SwiftCart Info -->
+        <div>
+          <h2 class="text-indigo-400 font-bold text-lg mb-3">SwiftCart</h2>
+          <p class="max-w-xs leading-relaxed text-gray-400">
+            Your one-stop shop for all your fashion and lifestyle needs. Quality
+            products, fast delivery, and excellent support.
+          </p>
+        </div>
+
+        <!-- Quick Links -->
+        <nav>
+          <h6 class="uppercase tracking-widest text-gray-500 mb-3">
+            Quick Links
+          </h6>
+          <ul class="space-y-2">
+            <li><a href="#" class="link link-hover text-gray-300">Home</a></li>
+            <li>
+              <a href="#" class="link link-hover text-gray-300">Products</a>
+            </li>
+            <li><a href="#" class="link link-hover text-gray-300">About</a></li>
+            <li>
+              <a href="#" class="link link-hover text-gray-300">Contact</a>
+            </li>
+          </ul>
+        </nav>
+
+        <!-- Support -->
+        <nav>
+          <h6 class="uppercase tracking-widest text-gray-500 mb-3">Support</h6>
+          <ul class="space-y-2">
+            <li><a href="#" class="link link-hover text-gray-300">FAQ</a></li>
+            <li>
+              <a href="#" class="link link-hover text-gray-300">Shipping</a>
+            </li>
+            <li>
+              <a href="#" class="link link-hover text-gray-300">Returns</a>
+            </li>
+            <li>
+              <a href="#" class="link link-hover text-gray-300"
+                >Privacy Policy</a
+              >
+            </li>
+          </ul>
+        </nav>
+
+        <!-- Newsletter -->
+        <div>
+          <h6 class="uppercase tracking-widest text-gray-500 mb-3">
+            Subscribe to our newsletter
+          </h6>
+          <p class="text-gray-400 text-xs mb-4">
+            The latest news, articles, and resources, sent to your inbox weekly.
+          </p>
+          <form class="flex space-x-2">
+            <input
+              type="email"
+              placeholder="Enter your email"
+              class="input input-bordered input-sm flex-grow bg-[#2e3242] border-gray-600 placeholder-gray-500 text-gray-300"
+              required
+            />
+            <button class="btn btn-primary btn-sm" type="submit">
+              Subscribe
+            </button>
+          </form>
+        </div>
+      </div>
+
+      <!-- Bottom bar -->
+      <div
+        class="mt-10 border-t border-gray-700 pt-6 max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between text-xs text-gray-500"
+      >
+        <p>© 2025 SwiftCart, Inc. All rights reserved.</p>
+
+        <nav class="flex space-x-5 mt-4 md:mt-0">
+          <!-- Facebook -->
+          <a href="#" aria-label="Facebook" class="hover:text-indigo-400">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="20"
+              height="20"
+              fill="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path
+                d="M9 8h-3v4h3v12h5v-12h3.642l.358-4h-4v-1.667c0-.955.192-1.333 1.115-1.333h2.885v-5h-3.808c-3.596 0-5.192 1.583-5.192 4.615v3.385z"
+              />
+            </svg>
+          </a>
+          <!-- Twitter -->
+          <a href="#" aria-label="Twitter" class="hover:text-indigo-400">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="20"
+              height="20"
+              fill="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path
+                d="M24 4.557c-.883.392-1.832.656-2.828.775 1.017-.609 1.798-1.574 2.165-2.724-.951.564-2.005.974-3.127 1.195-.897-.957-2.178-1.555-3.594-1.555-3.179 0-5.515 2.966-4.797 6.045-4.091-.205-7.719-2.165-10.148-5.144-1.29 2.213-.669 5.108 1.523 6.574-.806-.026-1.566-.247-2.229-.616-.054 2.281 1.581 4.415 3.949 4.89-.693.188-1.452.232-2.224.084.626 1.956 2.444 3.379 4.6 3.419-2.07 1.623-4.678 2.348-7.29 2.04 2.179 1.397 4.768 2.212 7.548 2.212 9.142 0 14.307-7.721 13.995-14.646.962-.695 1.797-1.562 2.457-2.549z"
+              />
+            </svg>
+          </a>
+          <!-- Instagram -->
+          <a href="#" aria-label="Instagram" class="hover:text-indigo-400">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="20"
+              height="20"
+              fill="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path
+                d="M19.615 3.184c-3.604-.246-11.631-.245-15.23 0-3.897.266-4.356 2.62-4.385 8.816.029 6.185.484 8.549 4.385 8.816 3.6.245 11.626.246 15.23 0 3.897-.266 4.356-2.62 4.385-8.816-.029-6.185-.484-8.549-4.385-8.816zm-10.615 12.816v-8l8 3.993-8 4.007z"
+              />
+            </svg>
+          </a>
+          <!-- LinkedIn -->
+          <a href="#" aria-label="LinkedIn" class="hover:text-indigo-400">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="20"
+              height="20"
+              fill="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path
+                d="M22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.214.792 24 1.771 24h20.451C23.2 24 24 23.214 24 22.271V1.729C24 .774 23.2 0 22.225 0zM7.09 20.452H3.545v-11.8h3.545v11.8zM5.318 7.453c-1.138 0-2.064-.925-2.064-2.064 0-1.139.926-2.064 2.064-2.064 1.138 0 2.064.925 2.064 2.064 0 1.139-.926 2.064-2.064 2.064zm15.134 12.999h-3.545v-5.699c0-1.359-.027-3.107-1.894-3.107-1.896 0-2.187 1.48-2.187 3.006v5.8h-3.545v-11.8h3.405v1.61h.049c.474-.899 1.632-1.847 3.358-1.847 3.594 0 4.256 2.365 4.256 5.441v6.596z"
+              />
+            </svg>
+          </a>
+          <!-- Email -->
+          <a
+            href="mailto:contact@swiftcart.com"
+            aria-label="Email"
+            class="hover:text-indigo-400"
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="20"
+              height="20"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="1.5"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              viewBox="0 0 24 24"
+              class="fill-none"
+            >
+              <path d="M4 4h16v16H4z" />
+              <path d="M22 6l-10 7L2 6" />
+            </svg>
+          </a>
+        </nav>
+      </div>
+    </footer>
+  </body>
+</html>
