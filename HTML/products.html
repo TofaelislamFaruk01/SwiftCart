@@ -29,10 +29,10 @@
     />
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
   </head>
-  <body class="max-w-[1800px] mx-auto">
+  <body class="max-w-[1800px] mx-auto flex flex-col min-h-screen">
     <!-- Navbar Section -->
     <navbar>
-      <div class="navbar bg-base-100 shadow-sm">
+      <div class="navbar bg-base-100 max-w-6xl mx-auto">
         <!-- Left: Logo -->
         <div class="navbar-start">
           <!-- Mobile Menu -->
@@ -102,14 +102,201 @@
         </div>
       </div>
     </navbar>
-    <main>
-      <!-- Hero Section -->
-      <div
-        class="hero min-h-[500px] bg-cover bg-center relative"
-        style="background-image: url(&quot;../Assets/banner-image.png&quot;)"
-      >
-        <div class="hero-overlay bg-black/50"></div>
-      </div>
+    <main class="flex-grow">
+      <!-- Our Products Section  -->
+      <section>
+        <div class="max-w-7xl mx-auto">
+          <!-- Title -->
+          <h1 class="text-5xl font-bold text-center mb-6 mt-12">
+            Our Products
+          </h1>
+
+          <!-- Categories -->
+          <div
+            id="categories"
+            class="flex justify-center flex-wrap gap-3 mb-10"
+          ></div>
+
+          <!-- Products Grid -->
+          <div
+            id="products"
+            class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6"
+          ></div>
+        </div>
+      </section>
     </main>
+    <!-- Footer Section -->
+    <footer class="p-10 text-gray-300" style="background-color: #1f2430">
+      <div
+        class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-4 gap-8 text-sm"
+      >
+        <!-- SwiftCart Info -->
+        <div>
+          <h2 class="text-indigo-400 font-bold text-lg mb-3">SwiftCart</h2>
+          <p class="max-w-xs leading-relaxed text-gray-400">
+            Your one-stop shop for all your fashion and lifestyle needs. Quality
+            products, fast delivery, and excellent support.
+          </p>
+        </div>
+
+        <!-- Quick Links -->
+        <nav>
+          <h6 class="uppercase tracking-widest text-gray-500 mb-3">
+            Quick Links
+          </h6>
+          <ul class="space-y-2">
+            <li>
+              <a href="index.html" class="link link-hover text-gray-300"
+                >Home</a
+              >
+            </li>
+            <li>
+              <a href="products.html" class="link link-hover text-gray-300"
+                >Products</a
+              >
+            </li>
+            <li>
+              <a href="about.html" class="link link-hover text-gray-300"
+                >About</a
+              >
+            </li>
+            <li>
+              <a href="contact.html" class="link link-hover text-gray-300"
+                >Contact</a
+              >
+            </li>
+          </ul>
+        </nav>
+
+        <!-- Support -->
+        <nav>
+          <h6 class="uppercase tracking-widest text-gray-500 mb-3">Support</h6>
+          <ul class="space-y-2">
+            <li><a href="#" class="link link-hover text-gray-300">FAQ</a></li>
+            <li>
+              <a href="#" class="link link-hover text-gray-300">Shipping</a>
+            </li>
+            <li>
+              <a href="#" class="link link-hover text-gray-300">Returns</a>
+            </li>
+            <li>
+              <a href="#" class="link link-hover text-gray-300"
+                >Privacy Policy</a
+              >
+            </li>
+          </ul>
+        </nav>
+
+        <!-- Newsletter -->
+        <div>
+          <h6 class="uppercase tracking-widest text-gray-500 mb-3">
+            Subscribe to our newsletter
+          </h6>
+          <p class="text-gray-400 text-xs mb-4">
+            The latest news, articles, and resources, sent to your inbox weekly.
+          </p>
+          <form class="flex space-x-2">
+            <input
+              type="email"
+              placeholder="Enter your email"
+              class="input input-bordered input-sm flex-grow bg-[#2e3242] border-gray-600 placeholder-gray-500 text-gray-300"
+              required
+            />
+            <button class="btn btn-primary btn-sm" type="submit">
+              Subscribe
+            </button>
+          </form>
+        </div>
+      </div>
+
+      <!-- Bottom bar -->
+      <div
+        class="mt-10 border-t border-gray-700 pt-6 max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between text-xs text-gray-500"
+      >
+        <p>© 2025 SwiftCart, Inc. All rights reserved.</p>
+
+        <nav class="flex space-x-5 mt-4 md:mt-0">
+          <!-- Facebook -->
+          <a href="#" aria-label="Facebook" class="hover:text-indigo-400">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="20"
+              height="20"
+              fill="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path
+                d="M9 8h-3v4h3v12h5v-12h3.642l.358-4h-4v-1.667c0-.955.192-1.333 1.115-1.333h2.885v-5h-3.808c-3.596 0-5.192 1.583-5.192 4.615v3.385z"
+              />
+            </svg>
+          </a>
+          <!-- Twitter -->
+          <a href="#" aria-label="Twitter" class="hover:text-indigo-400">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="20"
+              height="20"
+              fill="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path
+                d="M24 4.557c-.883.392-1.832.656-2.828.775 1.017-.609 1.798-1.574 2.165-2.724-.951.564-2.005.974-3.127 1.195-.897-.957-2.178-1.555-3.594-1.555-3.179 0-5.515 2.966-4.797 6.045-4.091-.205-7.719-2.165-10.148-5.144-1.29 2.213-.669 5.108 1.523 6.574-.806-.026-1.566-.247-2.229-.616-.054 2.281 1.581 4.415 3.949 4.89-.693.188-1.452.232-2.224.084.626 1.956 2.444 3.379 4.6 3.419-2.07 1.623-4.678 2.348-7.29 2.04 2.179 1.397 4.768 2.212 7.548 2.212 9.142 0 14.307-7.721 13.995-14.646.962-.695 1.797-1.562 2.457-2.549z"
+              />
+            </svg>
+          </a>
+          <!-- Instagram -->
+          <a href="#" aria-label="Instagram" class="hover:text-indigo-400">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="20"
+              height="20"
+              fill="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path
+                d="M19.615 3.184c-3.604-.246-11.631-.245-15.23 0-3.897.266-4.356 2.62-4.385 8.816.029 6.185.484 8.549 4.385 8.816 3.6.245 11.626.246 15.23 0 3.897-.266 4.356-2.62 4.385-8.816-.029-6.185-.484-8.549-4.385-8.816zm-10.615 12.816v-8l8 3.993-8 4.007z"
+              />
+            </svg>
+          </a>
+          <!-- LinkedIn -->
+          <a href="#" aria-label="LinkedIn" class="hover:text-indigo-400">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="20"
+              height="20"
+              fill="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path
+                d="M22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.214.792 24 1.771 24h20.451C23.2 24 24 23.214 24 22.271V1.729C24 .774 23.2 0 22.225 0zM7.09 20.452H3.545v-11.8h3.545v11.8zM5.318 7.453c-1.138 0-2.064-.925-2.064-2.064 0-1.139.926-2.064 2.064-2.064 1.138 0 2.064.925 2.064 2.064 0 1.139-.926 2.064-2.064 2.064zm15.134 12.999h-3.545v-5.699c0-1.359-.027-3.107-1.894-3.107-1.896 0-2.187 1.48-2.187 3.006v5.8h-3.545v-11.8h3.405v1.61h.049c.474-.899 1.632-1.847 3.358-1.847 3.594 0 4.256 2.365 4.256 5.441v6.596z"
+              />
+            </svg>
+          </a>
+          <!-- Email -->
+          <a
+            href="mailto:contact@swiftcart.com"
+            aria-label="Email"
+            class="hover:text-indigo-400"
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="20"
+              height="20"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="1.5"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              viewBox="0 0 24 24"
+              class="fill-none"
+            >
+              <path d="M4 4h16v16H4z" />
+              <path d="M22 6l-10 7L2 6" />
+            </svg>
+          </a>
+        </nav>
+      </div>
+    </footer>
+    <script src="../JS/script.js"></script>
   </body>
 </html>

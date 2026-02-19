@@ -32,7 +32,7 @@
   <body class="max-w-[1800px] mx-auto">
     <!-- Navbar Section -->
     <navbar>
-      <div class="navbar bg-base-100  max-w-6xl mx-auto">
+      <div class="navbar bg-base-100 max-w-6xl mx-auto">
         <!-- Left: Logo -->
         <div class="navbar-start">
           <!-- Mobile Menu -->
@@ -71,7 +71,7 @@
         <!-- Center: Menu -->
         <div class="navbar-center hidden lg:flex">
           <ul class="menu menu-horizontal px-1 font-medium">
-            <li><a href="index.html">Home</a></li>
+            <li><a href="index.html" class="menu-active">Home</a></li>
             <li><a href="products.html">Products</a></li>
             <li><a href="about.html">About</a></li>
             <li><a href="contact.html">Contact</a></li>
@@ -206,13 +206,15 @@
           <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
             <!-- Card 1 -->
             <div
-              class="card bg-white w-full shadow-sm rounded-lg overflow-hidden"
+              class="card bg-white w-full shadow-sm rounded-lg overflow-hidden flex flex-col"
             >
-              <figure class="bg-gray-100 p-8 flex justify-center items-center">
+              <figure
+                class="bg-gray-100 p-8 flex justify-center items-center flex-grow"
+              >
                 <img
                   src="../Assets/product1.png"
                   alt="Backpack"
-                  class="max-h-60 object-contain"
+                  class="max-h-60 min-h-60 w-auto object-contain"
                 />
               </figure>
               <div class="card-body p-4">
@@ -266,13 +268,15 @@
 
             <!-- Card 2 -->
             <div
-              class="card bg-white w-full shadow-sm rounded-lg overflow-hidden"
+              class="card bg-white w-full shadow-sm rounded-lg overflow-hidden flex flex-col"
             >
-              <figure class="bg-gray-100 p-8 flex justify-center items-center">
+              <figure
+                class="bg-gray-100 p-8 flex justify-center items-center flex-grow"
+              >
                 <img
                   src="../Assets/product2.png"
                   alt="Mens Casual Shirt"
-                  class="max-h-60 object-contain"
+                  class="max-h-60 min-h-60 w-auto object-contain"
                 />
               </figure>
               <div class="card-body p-4">
@@ -326,13 +330,15 @@
 
             <!-- Card 3 -->
             <div
-              class="card bg-white w-full shadow-sm rounded-lg overflow-hidden"
+              class="card bg-white w-full shadow-sm rounded-lg overflow-hidden flex flex-col"
             >
-              <figure class="bg-gray-100 p-8 flex justify-center items-center">
+              <figure
+                class="bg-gray-100 p-8 flex justify-center items-center flex-grow"
+              >
                 <img
                   src="../Assets/product3.png"
                   alt="Mens Cotton Jacket"
-                  class="max-h-60 object-contain"
+                  class="max-h-60 min-h-60 w-auto object-contain"
                 />
               </figure>
               <div class="card-body p-4">
