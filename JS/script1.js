@@ -14,12 +14,22 @@ const categories = fetch("https://fakestoreapi.com/products/categories")
 
 //console.log(categories);
 
-const allProducts = fetch("https://fakestoreapi.com/products")
-  .then((res) => res.json())
-  .then((data) => renderProducts(data))
-  .catch((err) => console.log("Failed to fetch products:", err));
+async function fetchProducts() {
+  try {
+    const res = await fetch("https://fakestoreapi.com/products");
+    const data = await res.json();
+    renderProducts(data);
+  } catch (err) {
+    //console.log("Failed to fetch products:", err);
+    productsContainer.innerHTML = `
+      <div class="text-center text-gray-500 py-10 mt-5">
+        <p class="text-lg">Failed to load products. Please try again later.</p>
+      </div>
+    `;
+  }
+}
 
-async function fetchCategories(categories) {
+function fetchCategories(categories) {
   for (const category of categories) {
     console.log(category);
     const Button = document.createElement("button");
@@ -37,7 +47,7 @@ async function fetchCategories(categories) {
     Button.addEventListener("click", () => {
       fetchProductsByCategories(category);
     });
-    console.log(Button);
+    //  console.log(Button);
     categoriesContainer.appendChild(Button);
   }
 }
@@ -50,12 +60,17 @@ async function fetchProductsByCategories(category) {
   )
     .then((res) => res.json())
     .then((data) => renderProducts(data))
-    .catch((err) =>
-      console.log(`Failed to fetch products for category ${category}:`, err),
-    );
+    .catch((err) => {
+      // console.log(`Failed to fetch products for category ${category}:`, err);
+      productDetailsContainer.innerHTML = `
+      <div class="text-center text-gray-500 py-10 mt-5">
+        <p class="text-lg">Failed to load products for category "${category}". Please try again later.</p>
+      </div>
+    `;
+    });
 }
 
-async function renderProducts(products) {
+ function renderProducts(products) {
   productsContainer.innerHTML = products
     .map(
       (product) => `
@@ -103,46 +118,59 @@ async function renderProducts(products) {
 async function productDetails(id) {
   const product = await fetch(`https://fakestoreapi.com/products/${id}`)
     .then((res) => res.json())
-    .catch((err) => console.log("Failed to fetch product details:", err));
-  console.log(product);
-  productDetailsContainer.innerHTML = `
-  <div class="card bg-base-100 w-full shadow-sm mt-5">
-    <figure class="bg-gray-300">
-      <img 
-        src="${product.image}" 
-        alt="${product.title}" 
-        class="max-h-60 min-h-60 w-auto object-contain py-2" 
-      />
-    </figure>
+    .then((data) => {
+      console.log(data);
+      productDetailsContainer.innerHTML = `
+      <div class="card bg-base-100 w-full shadow-sm mt-5">
+        <figure class="bg-gray-300">
+          <img 
+            src="${data.image}" 
+            alt="${data.title}" 
+            class="max-h-60 min-h-60 w-auto object-contain py-2" 
+          />
+        </figure>
 
-    <div class="card-body">
-     <div class="badge badge-secondary">${product.category}</div>
-      <h2 class="card-title">
-        ${product.title}
-       
-      </h2>
+        <div class="card-body">
+         <div class="badge badge-secondary">${data.category}</div>
+          <h2 class="card-title">
+            ${data.title}
+           
+          </h2>
 
-      <p>${product.description}</p>
+          <p>${data.description}</p>
 
-      <div class="flex items-center gap-2 mt-2">
-        <div class="">
-          ⭐ ${product.rating.rate}
-        </div>
-        <div class="text-sm text-gray-500">
-          (${product.rating.count} reviews)
+          <div class="flex items-center gap-2 mt-2">
+            <div class="">
+              ⭐ ${data.rating.rate}
+            </div>
+            <div class="text-sm text-gray-500">
+              (${data.rating.count} reviews)
+            </div>
+          </div>
+
+          <div class="card-actions justify-between items-center mt-4">
+            <div class=" text-lg font-bold">
+              $${data.price}
+            </div>
+
+            <button class="btn btn-accent">
+              Add to Cart
+            </button>
+          </div>
         </div>
       </div>
-
-      <div class="card-actions justify-between items-center mt-4">
-        <div class=" text-lg font-bold">
-          $${product.price}
-        </div>
-
-        <button class="btn btn-accent">
-          Add to Cart
-        </button>
+    `;
+    })
+    .catch((err) => {
+      console.log("Failed to fetch product details:", err);
+      productDetailsContainer.innerHTML = `
+      <div class="text-center text-gray-500 py-10 mt-5">
+        <p class="text-lg">Failed to load product details. Please try again later.</p>
       </div>
-    </div>
-  </div>
-`;
+    `;
+    });
+
+
 }
+
+fetchProducts();

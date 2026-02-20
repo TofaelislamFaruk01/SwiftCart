@@ -31,7 +31,7 @@
   </head>
   <body class="max-w-[1800px] mx-auto flex flex-col min-h-screen">
     <!-- Navbar Section -->
-     <navbar>
+    <navbar>
       <div class="navbar bg-base-100 max-w-6xl mx-auto">
         <!-- Left: Logo -->
         <div class="navbar-start">
@@ -59,8 +59,8 @@
             >
               <li><a href="index.html">Home</a></li>
               <li><a href="products.html">Products</a></li>
-              <li><a>About</a></li>
-              <li><a>Contact</a></li>
+              <li><a href="#">About</a></li>
+              <li><a href="#">Contact</a></li>
             </ul>
           </div>
 
@@ -71,10 +71,10 @@
         <!-- Center: Menu -->
         <div class="navbar-center hidden lg:flex">
           <ul class="menu menu-horizontal px-1 font-medium">
-            <li><a href="index.html" class="menu-active">Home</a></li>
-            <li><a href="products.html">Products</a></li>
-            <li><a>About</a></li>
-            <li><a>Contact</a></li>
+            <li><a href="index.html" >Home</a></li>
+            <li><a href="products.html" class="menu-active">Products</a></li>
+            <li><a href="#">About</a></li>
+            <li><a href="#">Contact</a></li>
           </ul>
         </div>
 
@@ -132,7 +132,7 @@
         </div>
       </section>
 
-        <!-- Modal for product details -->
+      <!-- Modal for product details -->
       <dialog id="my_modal_3" class="modal">
         <div class="modal-box">
           <form method="dialog">
@@ -142,8 +142,7 @@
               ✕
             </button>
           </form>
-          <div id="productDetailsContainer">
-          </div>
+          <div id="productDetailsContainer"></div>
         </div>
       </dialog>
     </main>
@@ -178,14 +177,10 @@
               >
             </li>
             <li>
-              <a class="link link-hover text-gray-300"
-                >About</a
-              >
+              <a href="#" class="link link-hover text-gray-300">About</a>
             </li>
             <li>
-              <a class="link link-hover text-gray-300"
-                >Contact</a
-              >
+              <a href="#" class="link link-hover text-gray-300">Contact</a>
             </li>
           </ul>
         </nav>
@@ -217,7 +212,9 @@
           <p class="text-gray-400 text-xs mb-4">
             The latest news, articles, and resources, sent to your inbox weekly.
           </p>
-          <form class="flex flex-col sm:flex-row md:flex-col lg:flex-row space-y-2 space-x-2">
+          <form
+            class="flex flex-col sm:flex-row md:flex-col lg:flex-row space-y-2 space-x-2"
+          >
             <input
               type="email"
               placeholder="Enter your email"
