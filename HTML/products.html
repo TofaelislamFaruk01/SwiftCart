@@ -31,7 +31,7 @@
   </head>
   <body class="max-w-[1800px] mx-auto flex flex-col min-h-screen">
     <!-- Navbar Section -->
-    <navbar>
+     <navbar>
       <div class="navbar bg-base-100 max-w-6xl mx-auto">
         <!-- Left: Logo -->
         <div class="navbar-start">
@@ -59,22 +59,22 @@
             >
               <li><a href="index.html">Home</a></li>
               <li><a href="products.html">Products</a></li>
-              <li><a href="about.html">About</a></li>
-              <li><a href="contact.html">Contact</a></li>
+              <li><a>About</a></li>
+              <li><a>Contact</a></li>
             </ul>
           </div>
 
           <!-- Logo -->
-          <a class="btn btn-ghost text-xl font-bold">SwiftCart</a>
+          <a class="text-xl font-bold">SwiftCart</a>
         </div>
 
         <!-- Center: Menu -->
         <div class="navbar-center hidden lg:flex">
           <ul class="menu menu-horizontal px-1 font-medium">
-            <li><a href="index.html">Home</a></li>
+            <li><a href="index.html" class="menu-active">Home</a></li>
             <li><a href="products.html">Products</a></li>
-            <li><a href="about.html">About</a></li>
-            <li><a href="contact.html">Contact</a></li>
+            <li><a>About</a></li>
+            <li><a>Contact</a></li>
           </ul>
         </div>
 
@@ -107,7 +107,7 @@
       <section>
         <div class="max-w-7xl mx-auto">
           <!-- Title -->
-          <h1 class="text-5xl font-bold text-center mb-6 mt-12">
+          <h1 class="text-3xl sm:text-5xl font-bold text-center mb-6 mt-12">
             Our Products
           </h1>
 
@@ -117,7 +117,7 @@
             class="flex flex-col sm:flex-row justify-center flex-wrap gap-3 mb-10 w-3/4 mx-auto"
           >
             <button
-              class="btn btn-md btn-outline menu menu-active font medium border border-gray-300 rounded-2xl px-5"
+              class="btn btn-md btn-outline font medium border border-gray-300 rounded-2xl px-5"
               onclick="fetchProducts()"
             >
               All
@@ -127,12 +127,12 @@
           <!-- Products -->
           <div
             id="products"
-            class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6"
+            class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 px-2"
           ></div>
         </div>
       </section>
 
-      <!-- <button class="btn" onclick="my_modal_3.showModal()">open modal</button> -->
+        <!-- Modal for product details -->
       <dialog id="my_modal_3" class="modal">
         <div class="modal-box">
           <form method="dialog">
@@ -148,7 +148,7 @@
       </dialog>
     </main>
     <!-- Footer Section -->
-    <footer class="p-10 text-gray-300" style="background-color: #1f2430">
+    <footer class="p-5 sm:p-10 text-gray-300" style="background-color: #1f2430">
       <div
         class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-4 gap-8 text-sm"
       >
@@ -178,12 +178,12 @@
               >
             </li>
             <li>
-              <a href="about.html" class="link link-hover text-gray-300"
+              <a class="link link-hover text-gray-300"
                 >About</a
               >
             </li>
             <li>
-              <a href="contact.html" class="link link-hover text-gray-300"
+              <a class="link link-hover text-gray-300"
                 >Contact</a
               >
             </li>
@@ -217,11 +217,11 @@
           <p class="text-gray-400 text-xs mb-4">
             The latest news, articles, and resources, sent to your inbox weekly.
           </p>
-          <form class="flex space-x-2">
+          <form class="flex flex-col sm:flex-row md:flex-col lg:flex-row space-y-2 space-x-2">
             <input
               type="email"
               placeholder="Enter your email"
-              class="input input-bordered input-sm flex-grow bg-[#2e3242] border-gray-600 placeholder-gray-500 text-gray-300"
+              class="input input-bordered input-sm w-full sm:flex-grow bg-white rounded-sm border-gray-600 placeholder-gray-500 text-gray-300"
               required
             />
             <button class="btn btn-primary btn-sm" type="submit">
@@ -233,11 +233,11 @@
 
       <!-- Bottom bar -->
       <div
-        class="mt-10 border-t border-gray-700 pt-6 max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between text-xs text-gray-500"
+        class="mt-10 border-t border-gray-700 pt-6 max-w-7xl mx-auto flex flex-col-reverse md:flex-row sm:items-center justify-between text-xs text-gray-500"
       >
-        <p>© 2025 SwiftCart, Inc. All rights reserved.</p>
+        <p class="pt-2 sm:pt-0">© 2025 SwiftCart, Inc. All rights reserved.</p>
 
-        <nav class="flex space-x-5 mt-4 md:mt-0">
+        <nav class="flex space-x-5 sm:mt-4 md:mt-0">
           <!-- Facebook -->
           <a href="#" aria-label="Facebook" class="hover:text-indigo-400">
             <svg

@@ -59,8 +59,8 @@
             >
               <li><a href="index.html">Home</a></li>
               <li><a href="products.html">Products</a></li>
-              <li><a href="about.html">About</a></li>
-              <li><a href="contact.html">Contact</a></li>
+              <li><a>About</a></li>
+              <li><a>Contact</a></li>
             </ul>
           </div>
 
@@ -73,8 +73,8 @@
           <ul class="menu menu-horizontal px-1 font-medium">
             <li><a href="index.html" class="menu-active">Home</a></li>
             <li><a href="products.html">Products</a></li>
-            <li><a href="about.html">About</a></li>
-            <li><a href="contact.html">Contact</a></li>
+            <li><a>About</a></li>
+            <li><a>Contact</a></li>
           </ul>
         </div>
 
@@ -112,20 +112,19 @@
 
         <div class="hero-content text-left text-white">
           <div class="max-w-6xl">
-            <h1 class="mb-5 text-5xl font-bold">Best Collection For You</h1>
-            <p class="mb-6 text-lg">
-              Discover the latest fashion, electronics, and lifestyle products
-              at unbeatable prices. Upgrade your style today with SwiftCart.
+            <h1 class="mb-5 text-2xl sm:text-4xl font-bold">Best Collection For You</h1>
+            <p class="mb-6 text-md sm:text-lg">
+              Discover the latest fashion, electronics, and more. Shop with confidence and style at SwiftCart.
             </p>
-            <button class="btn btn-primary btn-wide text-lg">Shop Now</button>
+            <button class="btn btn-primary sm:px-20 text-md sm:text-lg">Shop Now</button>
           </div>
         </div>
       </div>
 
       <!-- Why Choose Us Section -->
-      <section class="bg-[#f9f9f9] py-20">
+      <section class="bg-[#f9f9f9] py-10 sm:py-20">
         <div class="max-w-6xl mx-auto px-4 text-left">
-          <h2 class="text-5xl font-bold mb-5 text-center">Why Choose Us</h2>
+          <h2 class="text-3xl sm:text-5xl font-bold mb-5 text-center">Why Choose Us</h2>
           <p class="text-gray-500 mb-18 text-center">
             We provide the best shopping experience with top-notch services.
           </p>
@@ -200,8 +199,8 @@
       <section>
         <!-- Tailwind + DaisyUI CSS needed in your project -->
 
-        <div class="max-w-6xl mx-auto px-4 py-16 bg-white">
-          <h2 class="text-4xl font-bold mb-8">Trending Now</h2>
+        <div class="max-w-6xl mx-auto px-4 py-8 sm:py-16 bg-white">
+          <h2 class="text-3xl sm:text-4xl font-bold mb-8">Trending Now</h2>
 
           <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
             <!-- Card 1 -->
@@ -394,7 +393,7 @@
       </section>
     </main>
     <!-- Footer Section -->
-    <footer class="p-10 text-gray-300" style="background-color: #1f2430">
+    <footer class="p-5 sm:p-10 text-gray-300" style="background-color: #1f2430">
       <div
         class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-4 gap-8 text-sm"
       >
@@ -424,12 +423,12 @@
               >
             </li>
             <li>
-              <a href="about.html" class="link link-hover text-gray-300"
+              <a class="link link-hover text-gray-300"
                 >About</a
               >
             </li>
             <li>
-              <a href="contact.html" class="link link-hover text-gray-300"
+              <a class="link link-hover text-gray-300"
                 >Contact</a
               >
             </li>
@@ -463,11 +462,11 @@
           <p class="text-gray-400 text-xs mb-4">
             The latest news, articles, and resources, sent to your inbox weekly.
           </p>
-          <form class="flex space-x-2">
+          <form class="flex flex-col sm:flex-row md:flex-col lg:flex-row space-y-2 space-x-2">
             <input
               type="email"
               placeholder="Enter your email"
-              class="input input-bordered input-sm flex-grow bg-[#2e3242] border-gray-600 placeholder-gray-500 text-gray-300"
+              class="input input-bordered input-sm w-full sm:flex-grow bg-white rounded-sm border-gray-600 placeholder-gray-500 text-gray-300"
               required
             />
             <button class="btn btn-primary btn-sm" type="submit">
@@ -479,11 +478,11 @@
 
       <!-- Bottom bar -->
       <div
-        class="mt-10 border-t border-gray-700 pt-6 max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between text-xs text-gray-500"
+        class="mt-10 border-t border-gray-700 pt-6 max-w-7xl mx-auto flex flex-col-reverse md:flex-row sm:items-center justify-between text-xs text-gray-500"
       >
-        <p>© 2025 SwiftCart, Inc. All rights reserved.</p>
+        <p class="pt-2 sm:pt-0">© 2025 SwiftCart, Inc. All rights reserved.</p>
 
-        <nav class="flex space-x-5 mt-4 md:mt-0">
+        <nav class="flex space-x-5 sm:mt-4 md:mt-0">
           <!-- Facebook -->
           <a href="#" aria-label="Facebook" class="hover:text-indigo-400">
             <svg
