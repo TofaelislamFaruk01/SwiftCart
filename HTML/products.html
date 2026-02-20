@@ -96,7 +96,7 @@
                   d="M3 3h2l.4 2M7 13h10l4-8H5.4m1.6 8L5.4 5M7 13l-1.5 7h11L17 13M9 21h6"
                 />
               </svg>
-              <span class="badge badge-sm indicator-item">0</span>
+              <span class="badge badge-sm indicator-item bg-blue-200">0</span>
             </div>
           </button>
         </div>
@@ -112,21 +112,40 @@
           </h1>
 
           <!-- Categories -->
-          <div id="categories"
+          <div
+            id="categories"
             class="flex flex-col sm:flex-row justify-center flex-wrap gap-3 mb-10 w-3/4 mx-auto"
           >
+            <button
+              class="btn btn-md btn-outline menu menu-active font medium border border-gray-300 rounded-2xl px-5"
+              onclick="fetchProducts()"
+            >
+              All
+            </button>
+          </div>
 
-          <button class="btn btn-md btn-outline menu menu-active font medium border  border-gray-300 rounded-2xl px-5" onclick="fetchProducts()">All</button>
-        
-        </div
-
-          <!-- Products Grid -->
+          <!-- Products -->
           <div
             id="products"
             class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6"
           ></div>
         </div>
       </section>
+
+      <!-- <button class="btn" onclick="my_modal_3.showModal()">open modal</button> -->
+      <dialog id="my_modal_3" class="modal">
+        <div class="modal-box">
+          <form method="dialog">
+            <button
+              class="btn btn-sm btn-circle btn-ghost absolute right-2 top-2"
+            >
+              ✕
+            </button>
+          </form>
+          <div id="productDetailsContainer">
+          </div>
+        </div>
+      </dialog>
     </main>
     <!-- Footer Section -->
     <footer class="p-10 text-gray-300" style="background-color: #1f2430">

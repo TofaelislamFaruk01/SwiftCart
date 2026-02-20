@@ -2,6 +2,10 @@ const categoriesContainer = document.getElementById("categories");
 //console.log(categoriesContainer);
 const productsContainer = document.getElementById("products");
 //console.log(productsContainer);
+const productDetailsContainer = document.getElementById(
+  "productDetailsContainer",
+);
+//console.log(productDetailsContainer);
 
 const categories = fetch("https://fakestoreapi.com/products/categories")
   .then((res) => res.json())
@@ -68,7 +72,7 @@ async function renderProducts(products) {
               <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 fill-current" viewBox="0 0 20 20">
                 <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.286 3.97a1 1 0 00.95.69h4.184c.969 0 1.371 1.24.588 1.81l-3.39 2.462a1 1 0 00-.364 1.118l1.287 3.97c.3.921-.755 1.688-1.54 1.118l-3.39-2.462a1 1 0 00-1.176 0l-3.39 2.462c-.784.57-1.838-.197-1.539-1.118l1.286-3.97a1 1 0 00-.364-1.118L2.04 9.397c-.783-.57-.38-1.81.588-1.81h4.184a1 1 0 00.95-.69l+1.286-3.97z"/>
               </svg>
-              <span>${product.rating.rate} (${product.rating.count})</span> 
+              <span class="text-gray-700" >${product.rating.rate} (${product.rating.count})</span> 
             </div>
           </div>
             <h2 class="font-semibold text-lg line-clamp-1 mb-1">${product.title}</h2>
@@ -76,7 +80,7 @@ async function renderProducts(products) {
             <div class="flex space-x-3">
                   <button
                     class="btn btn-outline btn-sm flex-1 gap-2 justify-center border-slate-300 shadow-sm rounded-lg"
-                    type="button"
+                    type="button" onclick="productDetails(${product.id}); my_modal_3.showModal();"
                   >
                     <i class="fas fa-eye text-sm"></i>
                     Details
@@ -94,4 +98,51 @@ async function renderProducts(products) {
     `,
     )
     .join("");
+}
+
+async function productDetails(id) {
+  const product = await fetch(`https://fakestoreapi.com/products/${id}`)
+    .then((res) => res.json())
+    .catch((err) => console.log("Failed to fetch product details:", err));
+  console.log(product);
+  productDetailsContainer.innerHTML = `
+  <div class="card bg-base-100 w-full shadow-sm mt-5">
+    <figure class="bg-gray-300">
+      <img 
+        src="${product.image}" 
+        alt="${product.title}" 
+        class="max-h-60 min-h-60 w-auto object-contain py-2" 
+      />
+    </figure>
+
+    <div class="card-body">
+     <div class="badge badge-secondary">${product.category}</div>
+      <h2 class="card-title">
+        ${product.title}
+       
+      </h2>
+
+      <p>${product.description}</p>
+
+      <div class="flex items-center gap-2 mt-2">
+        <div class="">
+          ⭐ ${product.rating.rate}
+        </div>
+        <div class="text-sm text-gray-500">
+          (${product.rating.count} reviews)
+        </div>
+      </div>
+
+      <div class="card-actions justify-between items-center mt-4">
+        <div class=" text-lg font-bold">
+          $${product.price}
+        </div>
+
+        <button class="btn btn-accent">
+          Add to Cart
+        </button>
+      </div>
+    </div>
+  </div>
+`;
 }
